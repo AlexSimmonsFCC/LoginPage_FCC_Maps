@@ -47,7 +47,25 @@
         app.map.addLayer(basemap);
         var ref = new ArcGISTiledMapServiceLayer("https://services.arcgisonline.com/ArcGIS/rest/services/Reference/World_Reference_Overlay/MapServer");
         app.map.addLayer(ref);
+          const clientId = 'x1GHZYw3t3zpV7wt';
+              const redirectUri = 'https://fcc.github.io/Drive-Tests/';
+              const signInButton = document.getElementById('sign-in');
 
+/* 							var state = 0
+							// console.log(state)
+							
+							               function loadLoginWindow() {
+							               if (state == 0){
+							window.open('https://www.arcgis.com/sharing/rest/oauth2/authorize?client_id='+clientId+'&response_type=token&expiration=20160&redirect_uri=' + window.encodeURIComponent(redirectUri), 'oauth-window', 'height=400,width=600,menubar=no,location=yes,resizable=yes,scrollbars=yes,status=yes')
+							               state = 1}
+							               console.log(state)
+							}
+							     
+							    
+							document.getElementById('viewDiv').addEventListener('onclick', loadLoginWindow()); */
+ document.addEventListener('click', function(){
+    window.open('https://www.arcgis.com/sharing/rest/oauth2/authorize?client_id='+clientId+'&response_type=token&expiration=20160&redirect_uri=' + window.encodeURIComponent(redirectUri), 'oauth-window', 'height=400,width=600,menubar=no,location=yes,resizable=yes,scrollbars=yes,status=yes')
+});
         // add US Counties as a dynamic map service layer
         var urlDyn = "https://sampleserver6.arcgisonline.com/arcgis/rest/services/Census/MapServer";
         var usaLayer = new ArcGISDynamicMapServiceLayer(urlDyn, {
